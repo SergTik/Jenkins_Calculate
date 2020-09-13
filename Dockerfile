@@ -4,6 +4,8 @@ WORKDIR /source
 # copy csproj and restore as distinct layers
 COPY *.sln .
 COPY TestCalc/*.csproj ./TestCalc/
+RUN dotnet restore -r linux-x64
+
 # copy everything else and build app
 COPY TestCalc/. ./TestCalc/
 WORKDIR /source/TestCalc
