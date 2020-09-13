@@ -5,7 +5,6 @@ stage "disable docker"
 sh label: '', script: 'sudo docker stop calc || true'
 sh label: '', script: 'sudo docker rm -v $(sudo docker ps -a -q -f status=exited) || true'
 stage "restore"
-sh label: '', script: 'git pull'
 sh label: '', script: 'dotnet restore -r linux-x64'
 stage "Testing"
 sh label: '', script: 'dotnet test'	
