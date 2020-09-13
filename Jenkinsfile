@@ -1,4 +1,5 @@
 node{
+checkout scm
 stage("Fix the permission issue") 
 sh "sudo chown root:jenkins /run/docker.sock"
 stage "disable docker"
